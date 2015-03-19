@@ -7,11 +7,16 @@ void HitBox::setFields(float x, float y, float width, float height){
     this->width = width;
     this->height = height;
     angle = 0;
+    alive = true;
 }
 
 void HitBox::updatePos(float x, float y) {
     this->x = x;
     this->y = y;
+}
+
+bool HitBox::checkWithin(float x_given, float y_given, rad) {
+    int x_basis = rot(1, 0);
 }
 
 Ship::Ship (int type, float x_pos, float y_pos) {
@@ -25,6 +30,27 @@ void Ship::updateHitboxes(float x_pos, float y_pos, float angle) {
     h.angle = angle;
 }
 
-bool Ship::checkHit (float hit_x, float hit_y, float rad) {
+void Ship::checkHit (float hit_x, float hit_y, float rad) {
+    for (int i=0;i<hitboxes.size();i++) {
+        if (hitboxes[i].alive && hitboxes[i].checkWithin(hit_x, hit_y, rad)) {
+            hitboxes[i].alive = false;
+            return i;
+        }
+    }
+    return -1;
+}
 
+void Ship::checkMissile(float hit_x, float hit_y, float rad) {
+    for (int i=0;i<hitboxes.size();i++) {
+        hitboxes[i].checkHit(hit_x, hit_y, rad);
+    }
+}
+
+void Sea::update() {
+
+}
+
+Sea::Sea(int x, int y) {
+    height = y;
+    width = x;
 }
