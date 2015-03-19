@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 	cout << "Hello World!" << endl;
-	Game game;
-	game.init();
-	return game.run();
+	Game mainFrame;
+	mainFrame.init();
+	return mainFrame.run();
 }
