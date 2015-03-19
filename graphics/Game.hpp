@@ -11,6 +11,7 @@ class Game {
 		bool init();
 		void handleInput();
 		void update(float dt);
+		void createBoard();
 		void render();
 		int run();
 };

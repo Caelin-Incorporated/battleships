@@ -5,6 +5,10 @@ bool Game::init(){
 	return false;
 }
 
+void Game::createBoard() {
+	// Some shit
+}
+
 void Game::handleInput(){
 	sf::Event e;
 	while(screen.pollEvent(e)){
