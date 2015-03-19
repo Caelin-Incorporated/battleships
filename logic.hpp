@@ -1,10 +1,10 @@
 #include <vector>
 
 
-class Ship { 
-public: 
+class Ship {
+public:
   Ship ( int type, float x_pos, float y_pos );
-  bool checkHit ( float hit_x, float hit_y, float rad ); 
+  bool checkHit ( float hit_x, float hit_y, float rad );
   bool isDead ();
 
   ~Ship ();
@@ -14,14 +14,14 @@ private:
 };
 
 
-class Sea { 
+class Sea {
 public:
-  std::vector<Ship*> ships; 
-  void update (); 
-}
-  
+  std::vector<Ship*> ships;
+  void update ();
+};
 
 
 
-  
-  
+
+
+
