@@ -7,6 +7,7 @@
 class HitBox {
     private:
         float height, width, x, y;
+        2vector rot(float x, float y);
     public:
         float angle;
         bool alive;
