@@ -2,7 +2,7 @@
 #define GAME_HPP_
 #include <iostream>
 #include <SFML/Graphics.hpp>
-
+#include "../logic/logic.hpp"
 class Game {
 	private:
 		std::string title = "Battle Ships";

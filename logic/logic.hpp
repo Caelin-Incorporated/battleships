@@ -5,14 +5,15 @@ class HitBox {
         float height, width, x, y;
     public:
         float angle;
-        hitBox ( float x, float y, float height, float width, x);
+        void setFields(float x, float y, float height, float width);
+        void updatePos(float x, float y);
         bool checkWithin(float x_given, float y_given);
 };
 
 class Ship {
     private:
         float speed, damage;
-        hitBox h;
+        HitBox h;
     public:
         Ship ( int type, float x_pos, float y_pos );
         bool checkHit ( float hit_x, float hit_y, float rad );
