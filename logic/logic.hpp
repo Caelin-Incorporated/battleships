@@ -9,6 +9,7 @@ class HitBox {
         float height, width, x, y;
         vec2 rot(float x, float y);
     public:
+            //radians pls
         float angle;
         bool alive;
         void setFields(float x, float y, float height, float width);

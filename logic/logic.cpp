@@ -1,4 +1,5 @@
 #include "logic.hpp"
+#include <math.h>
 using namespace std;
 
 void HitBox::setFields(float x, float y, float width, float height){
@@ -16,14 +17,15 @@ void HitBox::updatePos(float x, float y) {
 }
 
 vec2 HitBox::rot(float x, float y){
-    //Does some shit.
-    vec2 randvec = {};
-    return randvec;
+    vec2 vec_result= {};
+    vec_result.x = x * cos(this->angle) - y * sin(this->angle);
+    vec_result.y = x * sin(this->angle) + y * cos(this->angle);
+    return vec_result;
 }
 
 bool HitBox::checkWithin(float x_given, float y_given, float rad) {
     vec2 x_basis = rot(1, 0);
-    vec2 y_basis = rot(1, 0);
+    vec2 y_basis = rot(0, 1);
     return false;
     // find (x_given, y_given) in terms of {x_basis, y_basis} and then
     //
