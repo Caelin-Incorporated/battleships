@@ -1,13 +1,13 @@
 #ifndef LOGIC_HPP_
 #define LOGIC_HPP_
 #include <vector>
-
+#include "vec.hpp"
 
 
 class HitBox {
     private:
         float height, width, x, y;
-        2vector rot(float x, float y);
+        vec2 rot(float x, float y);
     public:
         float angle;
         bool alive;
@@ -21,10 +21,10 @@ class Ship {
         float speed, damage;
         std::vector<HitBox> hitboxes;
         // checkHit returns the index of whichever hitbox was hit, or -1 if none were.
-        void checkHit (float hit_x, float hit_y, float rad);
+        int checkHit (float hit_x, float hit_y, float rad);
     public:
         Ship (int type, float x_pos, float y_pos);
-        void checkMissile(float x, float y, float rad);
+        int checkMissile(float x, float y, float rad);
         void updateHitboxes(float x, float y, float angle);
         bool isDead ();
         ~Ship ();
