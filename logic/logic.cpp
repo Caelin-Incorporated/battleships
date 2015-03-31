@@ -26,14 +26,18 @@ vec2 HitBox::rot(float x, float y){
 bool HitBox::checkWithin(float x_given, float y_given, float rad) {
     vec2 x_basis = rot(1, 0);
     vec2 y_basis = rot(0, 1);
-    return false;
+    vec2 missile = {x_given-this->x, y_given - this->y};
+    vec2 proj_x = (x_basis * missile) * x_basis;
+    vec2 proj_y = (y_basis * missile) * y_basis;
     // find (x_given, y_given) in terms of {x_basis, y_basis} and then
     //
 }
 
 Ship::Ship (int type, float x_pos, float y_pos) {
     hitboxes.push_back(HitBox());
-    hitboxes[0].setFields(x_pos,y_pos,30,15);
+    for (int i=0;i<hitboxes.size();i++) {
+        hitboxes[i].setFields(x_pos,y_pos,30,15);
+    }
     speed = 5;
     damage = 0;
 }
