@@ -11,6 +11,8 @@ class HitBox {
     public:
             //radians pls
         float angle;
+        // Something we could use to detect whether the hitbox is a rectangle or an ellipse?
+        int type;
         bool alive;
         void setFields(float x, float y, float height, float width);
         void updatePos(float x, float y);
