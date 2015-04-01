@@ -32,7 +32,7 @@ bool HitBox::checkWithin(float x_given, float y_given, float rad) {
     vec2 proj_y = (y_basis * missile) * y_basis;
     vec2 xdim = (this->width / 2) * x_basis;
     vec2 ydim = (this->height / 2) * y_basis;
-    bool result = (abs(proj_x.x) <= abs(xdim.x)) && (abs(proj_x.y) <= abs(xdim.y)) && (abs(proj_y.x) <= abs(ydim.x)) && (abs(proj_y) <= abs(ydim.y));
+    bool result = (abs(proj_x.x) <= abs(xdim.x)) && (abs(proj_x.y) <= abs(xdim.y)) && (abs(proj_y.x) <= abs(ydim.x)) && (abs(proj_y.y) <= abs(ydim.y));
     return result;
 }
 
