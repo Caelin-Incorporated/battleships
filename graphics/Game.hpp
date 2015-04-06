@@ -3,6 +3,13 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "../logic/logic.hpp"
+
+class Program {
+	public:
+	private:
+
+};
+
 class Game {
 	private:
 		std::string title = "Battle Ships";

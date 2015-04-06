@@ -6,7 +6,7 @@ bool Game::init(){
 }
 
 void Game::createBoard() {
-	// Some shit
+	// TOOD create a board
 }
 
 void Game::handleInput(){
