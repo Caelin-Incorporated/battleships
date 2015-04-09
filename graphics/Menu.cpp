@@ -31,7 +31,12 @@ void Menu::draw(sf::RenderWindow &screen) {
     screen.draw(quit);
 }
 
+bool Menu::update(float dt) {
+    sf::Vector2i mouse_pos = sf::Mouse::getPosition();
+    if(start.getGlobalBounds().contains(mouse_pos.x, mouse_pos.y) && sf::Mouse::isButtonPressed(sf::Mouse::Left)){
 
+    }
+}
 
 Menu::Menu() {
     if (!setStart("./data/textures/start.png")) {
