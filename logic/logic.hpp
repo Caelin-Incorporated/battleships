@@ -9,7 +9,7 @@ class HitBox {
         float height, width;
         vec2 rot(float x, float y);
     public:
-		//radians plz
+		//degrees plz
         float angle;
 		float x, y; 
         // Something we could use to detect whether the hitbox is a rectangle or an ellipse?

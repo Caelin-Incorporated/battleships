@@ -1,6 +1,8 @@
 #ifndef VEC_HPP_
 #define VEC_HPP_
 
+#define PI 3.1415926
+
 class vec2 {
     public:
         float x;

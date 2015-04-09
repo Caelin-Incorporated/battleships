@@ -17,9 +17,10 @@ void HitBox::updatePos(float x, float y) {
 }
 
 vec2 HitBox::rot(float x, float y){
+	float rad_angle = this->angle*(PI/180.0f);
     vec2 vec_result;
-    vec_result.x = x * cos(this->angle) - y * sin(this->angle);
-    vec_result.y = x * sin(this->angle) + y * cos(this->angle);
+    vec_result.x = x * cos(rad_angle) - y * sin(rad_angle);
+    vec_result.y = x * sin(rad_angle) + y * cos(rad_angle);
     return vec_result;
 }
 
