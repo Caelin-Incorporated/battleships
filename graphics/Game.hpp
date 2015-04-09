@@ -4,11 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include "../logic/logic.hpp"
 
-class Program {
-	public:
-	private:
-
-};
 
 class Game {
 	private:
@@ -19,6 +14,7 @@ class Game {
 		void handleInput();
 		void update(float dt);
 		void createBoard();
+		void makeMenu();
 		void render();
 		int run();
 };

@@ -5,6 +5,19 @@ bool Game::init(){
 	return false;
 }
 
+void Game::makeMenu() {
+	float dt = 0;
+	sf::Clock dtTimer;
+	while(screen.isOpen()){
+		handleInput();
+		update(dt);
+		screen.clear(sf::Color(50, 50, 170));
+		render();
+		screen.display();
+		dt = dtTimer.restart().asSeconds();
+	}
+}
+
 void Game::createBoard() {
 	// TOOD create a board
 }
