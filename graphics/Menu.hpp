@@ -1,7 +1,7 @@
 #ifndef MENU_HPP_
 #define MENU_HPP_
 #include <SFML/Graphics.hpp>
-#include "Game.hpp"
+#include "State.hpp"
 
 class Menu {
     private:
