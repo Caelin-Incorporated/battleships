@@ -25,7 +25,6 @@ void Game::makeMenu() {
 
 void Game::createBoard() {
 	Ship s(0, 10, 10); // TODO add sea add ship function
-	s.updateHitboxes(100,100, M_PI);
 	sea.ships.push_back(s);
 }
 
