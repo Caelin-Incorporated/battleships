@@ -4,7 +4,7 @@ using namespace std;
 
 bool Game::init(){
 	screen.create(sf::VideoMode(800,600), title, sf::Style::Default);
-	state = GAME; // TODO swtich to menu when it's done
+	state = GAME; // TOOD swtich to menu when it's done
 	board.init();
 	return false;
 }
