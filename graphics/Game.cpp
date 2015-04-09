@@ -12,6 +12,7 @@ bool Game::init(){
 void Game::handleInput(){
 	sf::Event e;
 	while(screen.pollEvent(e)){
+
 		if(e.type == sf::Event::Closed){
 			screen.close();
 		}
@@ -20,8 +21,9 @@ void Game::handleInput(){
 
 void Game::update(float dt){
 	if(state == GAME){
-		board.update(dt);
+		state = board.update(dt);
 	} else if(state == MENU){
+		state = menu.update(dt);
 	}
 }
 

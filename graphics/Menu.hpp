@@ -17,6 +17,7 @@ class Menu {
         bool setStart(std::string Texture);
     public:
         Menu();
+        State update(float dt);
 		void draw(sf::RenderWindow &screen);
 };
 
