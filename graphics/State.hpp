@@ -4,6 +4,7 @@
 enum GameState {
 	MENU,
 	GAME,
+	EXIT,
 };
 
 #endif

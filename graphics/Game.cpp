@@ -4,7 +4,7 @@ using namespace std;
 
 bool Game::init(){
 	screen.create(sf::VideoMode(800,600), title, sf::Style::Default);
-	state = MENU; // TOOD swtich to menu when it's done
+	state = MENU; 
 	board.init();
 	return false;
 }
@@ -24,6 +24,8 @@ void Game::update(float dt){
 		state = board.update(dt);
 	} else if(state == MENU){
 		state = menu.update(dt);
+	} else if(state == EXIT){
+		screen.close();
 	}
 }
 

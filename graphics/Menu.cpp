@@ -34,7 +34,13 @@ void Menu::draw(sf::RenderWindow &screen) {
 GameState Menu::update(float dt) {
     sf::Vector2i mouse_pos = sf::Mouse::getPosition();
     if(start.getGlobalBounds().contains(mouse_pos.x, mouse_pos.y) && sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-
+        //do what needs to be done
+		cout << "PRESS" << endl;
+        return GAME;
+    } else if (quit.getGlobalBounds().contains(mouse_pos.x, mouse_pos.y) && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+        //do what needs to be done
+		cout << "QUIT! " << endl;
+        return EXIT;
     }
 	return MENU;
 }
