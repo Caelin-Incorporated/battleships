@@ -6,11 +6,6 @@
 #include "Menu.hpp"
 #include "../logic/logic.hpp"
 
-enum GameState {
-	MENU,
-	GAME,
-};
-
 class Game {
 	private:
 		std::string title = "Battle Ships";

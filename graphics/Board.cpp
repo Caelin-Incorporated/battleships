@@ -20,7 +20,7 @@ void Board::init(){
 	sea.ships.push_back(s);
 }
 
-void Board::update(float dt){
+GameState Board::update(float dt){
 	float angle = sea.ships[0].getRot();
 	sea.ships[0].updateHitboxes(100,100,angle+90*dt);
 	if(water_time > 0.1){
@@ -30,6 +30,7 @@ void Board::update(float dt){
 		water_spr.setTextureRect(water_box);
 	}
 	water_time += dt;
+	return GAME;
 }
 
 void Board::draw(sf::RenderWindow &screen){
