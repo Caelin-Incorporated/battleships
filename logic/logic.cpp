@@ -1,5 +1,4 @@
 #include "logic.hpp"
-#include <math.h>
 #include <cmath>
 using namespace std;
 
@@ -45,6 +44,15 @@ Ship::Ship (int type, float x_pos, float y_pos) {
     damage = 0;
 }
 
+vec2 Ship::getPos(){
+	vec2 out(hitboxes[0].x, hitboxes[0].y);
+	return out;
+}
+
+float Ship::getRot(){
+	return hitboxes[0].angle;
+}
+
 void Ship::updateHitboxes(float x_pos, float y_pos, float angle) {
     for (size_t i=0;i<hitboxes.size();i++) {
         hitboxes[i].updatePos(x_pos, y_pos);
@@ -71,11 +79,12 @@ int Ship::checkMissile(float hit_x, float hit_y, float rad) {
     return -1;
 }
 
-void Sea::update() {
-
+void Sea::init(int width, int height){
+	this->width = width;
+	this->height = height;
+	this->ships.clear();
 }
 
-Sea::Sea(int x, int y) {
-    height = y;
-    width = x;
+void Sea::update(){
+
 }

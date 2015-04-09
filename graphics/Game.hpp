@@ -2,13 +2,22 @@
 #define GAME_HPP_
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "ShipSpr.hpp"
 #include "../logic/logic.hpp"
 
+
+enum GameState {
+	MENU,
+	GAME,
+};
 
 class Game {
 	private:
 		std::string title = "Battle Ships";
 		sf::RenderWindow screen;
+		Sea sea;
+		GameState state;
+		ShipSpr ship_spr;
 	public:
 		bool init();
 		void handleInput();
