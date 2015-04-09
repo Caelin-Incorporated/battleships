@@ -3,6 +3,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Board.hpp"
+#include "Menu.hpp"
 #include "../logic/logic.hpp"
 
 enum GameState {
@@ -16,11 +17,11 @@ class Game {
 		sf::RenderWindow screen;
 		GameState state;
 		Board board;
+		Menu menu;
 	public:
 		bool init();
 		void handleInput();
 		void update(float dt);
-		void makeMenu();
 		void render();
 		int run();
 };

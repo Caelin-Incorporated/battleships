@@ -5,8 +5,6 @@
 
 class Menu {
     private:
-        Menu();
-
         std::string startLoc;
         std::string quitLoc;
 
@@ -18,7 +16,8 @@ class Menu {
         bool setQuit(std::string Texture);
         bool setStart(std::string Texture);
     public:
-		void drawMenu();
+        Menu();
+		void draw(sf::RenderWindow &screen);
 };
 
 #endif

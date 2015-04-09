@@ -11,6 +11,7 @@ bool Menu::setStart(string texture){
 	start.setTexture(startTex);
 	sf::Vector2u s = start.getTexture()->getSize();
 	start.setOrigin(s.x/2.0, s.y/2.0);
+	start.setPosition(400, 150);
 	return true;
 }
 
@@ -21,11 +22,13 @@ bool Menu::setQuit(string texture){
 	quit.setTexture(quitTex);
 	sf::Vector2u s = quit.getTexture()->getSize();
 	quit.setOrigin(s.x/2.0, s.y/2.0);
+	quit.setPosition(400, 350);
 	return true;
 }
 
-void Menu::drawMenu() {
-
+void Menu::draw(sf::RenderWindow &screen) {
+    screen.draw(start);
+    screen.draw(quit);
 }
 
 
