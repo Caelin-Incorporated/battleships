@@ -2,9 +2,8 @@
 #define GAME_HPP_
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "ShipSpr.hpp"
+#include "Board.hpp"
 #include "../logic/logic.hpp"
-
 
 enum GameState {
 	MENU,
@@ -15,14 +14,12 @@ class Game {
 	private:
 		std::string title = "Battle Ships";
 		sf::RenderWindow screen;
-		Sea sea;
 		GameState state;
-		ShipSpr ship_spr;
+		Board board;
 	public:
 		bool init();
 		void handleInput();
 		void update(float dt);
-		void createBoard();
 		void makeMenu();
 		void render();
 		int run();

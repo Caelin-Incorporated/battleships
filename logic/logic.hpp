@@ -3,7 +3,6 @@
 #include <vector>
 #include "vec.hpp"
 
-
 class HitBox {
     private:
         float height, width;
