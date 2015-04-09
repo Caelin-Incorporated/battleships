@@ -1,4 +1,8 @@
+#include "Menu.hpp"
+
 using namespace::std;
 
 
-void Game::drawMenu;
+void Menu::drawMenu() {
+
+}

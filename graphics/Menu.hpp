@@ -5,7 +5,7 @@ class Menu {
     private:
         Menu();
     public:
-		void drawMenu;
+		void drawMenu();
 };
 
 #endif
