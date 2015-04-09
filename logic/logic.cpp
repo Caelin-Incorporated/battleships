@@ -18,7 +18,7 @@ void HitBox::updatePos(float x, float y) {
 }
 
 vec2 HitBox::rot(float x, float y){
-    vec2 vec_result= {};
+    vec2 vec_result;
     vec_result.x = x * cos(this->angle) - y * sin(this->angle);
     vec_result.y = x * sin(this->angle) + y * cos(this->angle);
     return vec_result;
@@ -38,7 +38,7 @@ bool HitBox::checkWithin(float x_given, float y_given, float rad) {
 
 Ship::Ship (int type, float x_pos, float y_pos) {
     hitboxes.push_back(HitBox());
-    for (int i=0;i<hitboxes.size();i++) {
+    for (size_t i=0;i<hitboxes.size();i++) {
         hitboxes[i].setFields(x_pos,y_pos,30,15);
     }
     speed = 5;
@@ -46,14 +46,14 @@ Ship::Ship (int type, float x_pos, float y_pos) {
 }
 
 void Ship::updateHitboxes(float x_pos, float y_pos, float angle) {
-    for (int i=0;i<hitboxes.size();i++) {
+    for (size_t i=0;i<hitboxes.size();i++) {
         hitboxes[i].updatePos(x_pos, y_pos);
         hitboxes[i].angle = angle;
     }
 }
 
 int Ship::checkHit (float hit_x, float hit_y, float rad) {
-    for (int i=0;i<hitboxes.size();i++) {
+    for (size_t i=0;i<hitboxes.size();i++) {
         if (hitboxes[i].alive && hitboxes[i].checkWithin(hit_x, hit_y, rad)) {
             hitboxes[i].alive = false;
             return i;
@@ -63,8 +63,8 @@ int Ship::checkHit (float hit_x, float hit_y, float rad) {
 }
 
 int Ship::checkMissile(float hit_x, float hit_y, float rad) {
-    for (int i=0;i<hitboxes.size();i++) {
-        if(hitboxes[i].checkWithin(hit_x, hit_y, rad)!=-1) {
+    for (size_t i=0;i<hitboxes.size();i++) {
+        if(hitboxes[i].checkWithin(hit_x, hit_y, rad)) {
             return i;
         }
     }

@@ -5,6 +5,8 @@ class vec2 {
     public:
         float x;
         float y;
+		vec2();
+		vec2(float x, float y);
 		static vec2 add(vec2 lhs, vec2 rhs);
 		static vec2 sub(vec2 lhs, vec2 rhs);
 		static vec2 scalarMult(vec2 vec, float scalar);
