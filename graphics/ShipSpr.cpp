@@ -6,6 +6,8 @@ bool ShipSpr::setTexture(string texture){
 		return false;
 	}
 	sSpr.setTexture(sTex);
+	sf::Vector2u s = sSpr.getTexture()->getSize();
+	sSpr.setOrigin(s.x/2.0, s.y/2.0);
 	return true;
 }
 

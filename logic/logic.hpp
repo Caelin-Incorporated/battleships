@@ -6,11 +6,12 @@
 
 class HitBox {
     private:
-        float height, width, x, y;
+        float height, width;
         vec2 rot(float x, float y);
     public:
-            //radians pls
+		//radians plz
         float angle;
+		float x, y; 
         // Something we could use to detect whether the hitbox is a rectangle or an ellipse?
         int type;
         bool alive;
@@ -24,23 +25,23 @@ class Ship {
         float speed, damage;
         std::vector<HitBox> hitboxes;
         // checkHit returns the index of whichever hitbox was hit, or -1 if none were.
-        int checkHit (float hit_x, float hit_y, float rad);
+        int checkHit(float hit_x, float hit_y, float rad);
     public:
-        Ship (int type, float x_pos, float y_pos);
+        Ship(int type, float x_pos, float y_pos);
+		vec2 getPos();
+		float getRot();
         int checkMissile(float x, float y, float rad);
         void updateHitboxes(float x, float y, float angle);
         bool isDead ();
-        ~Ship ();
 };
-
 
 // For now, standard Sea is: Sea mainSea(param1,...,paramn)
 class Sea {
     private:
-    public:
         int height, width;
-        std::vector<Ship> ships;
-        Sea (int x, int y);
+    public:
+		std::vector<Ship> ships;
+		void init(int width, int height);
         void update();
 };
 

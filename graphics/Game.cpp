@@ -1,12 +1,19 @@
+#include <cmath>
 #include "Game.hpp"
+using namespace std;
 
 bool Game::init(){
 	screen.create(sf::VideoMode(800,600), title, sf::Style::Default);
+	state = GAME; // TODO swtich to menu when it's done
+	ship_spr.setTexture("./data/textures/ship.png");
+	createBoard();
 	return false;
 }
 
 void Game::createBoard() {
-	// TOOD create a board
+	Ship s(0, 10, 10); // TODO add sea add ship function
+	s.updateHitboxes(100,100, M_PI);
+	sea.ships.push_back(s);
 }
 
 void Game::handleInput(){
@@ -19,11 +26,20 @@ void Game::handleInput(){
 }
 
 void Game::update(float dt){
-	//TOOD Update code
+	float angle = sea.ships[0].getRot();
+	sea.ships[0].updateHitboxes(100,100,angle+90*dt);
 }
 
 void Game::render(){
-	//TOOD rendering code
+	if(state == GAME){
+		// TODO call board.draw instead
+		for(Ship &s : sea.ships){
+			vec2 pos = s.getPos();
+			ship_spr.updatePos(pos.x, pos.y, s.getRot());
+			ship_spr.draw(screen);
+		}
+	} else if(state == MENU){
+	}
 }
 
 int Game::run(){
