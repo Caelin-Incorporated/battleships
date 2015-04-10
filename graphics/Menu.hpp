@@ -8,6 +8,7 @@ class Menu {
         std::string startLoc;
         std::string quitLoc;
 
+		sf::RenderWindow &screen;
         sf::Sprite start;
         sf::Texture startTex;
         sf::Sprite quit;
@@ -16,7 +17,7 @@ class Menu {
         bool setQuit(std::string Texture);
         bool setStart(std::string Texture);
     public:
-        Menu();
+        Menu(sf::RenderWindow &window);
         GameState update(float dt);
 		void draw(sf::RenderWindow &screen);
 };

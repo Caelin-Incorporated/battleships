@@ -14,6 +14,7 @@ class Game {
 		Board board;
 		Menu menu;
 	public:
+		Game() : menu(screen) {};
 		bool init();
 		void handleInput();
 		void update(float dt);

@@ -32,20 +32,18 @@ void Menu::draw(sf::RenderWindow &screen) {
 }
 
 GameState Menu::update(float dt) {
-    sf::Vector2i mouse_pos = sf::Mouse::getPosition();
+    sf::Vector2i mouse_pos = sf::Mouse::getPosition(screen);
     if(start.getGlobalBounds().contains(mouse_pos.x, mouse_pos.y) && sf::Mouse::isButtonPressed(sf::Mouse::Left)){
         //do what needs to be done
-		cout << "PRESS" << endl;
         return GAME;
     } else if (quit.getGlobalBounds().contains(mouse_pos.x, mouse_pos.y) && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
         //do what needs to be done
-		cout << "QUIT! " << endl;
         return EXIT;
     }
 	return MENU;
 }
 
-Menu::Menu() {
+Menu::Menu(sf::RenderWindow &window) : screen(window) {
     if (!setStart("./data/textures/start.png")) {
         cout << "Error: couldn't find start button\n";
     }
