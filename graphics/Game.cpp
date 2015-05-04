@@ -4,7 +4,7 @@ using namespace std;
 
 bool Game::init(){
 	screen.create(sf::VideoMode(800,600), title, sf::Style::Default);
-	state = MENU; 
+	state = GAME;
 	board.init();
 	return false;
 }
